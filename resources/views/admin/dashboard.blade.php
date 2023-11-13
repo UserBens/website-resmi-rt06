@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bens Portofolio | Admin</title>
+    <title>Dashboard | Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin') }}/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ asset('admin') }}/vendors/base/vendor.bundle.base.css">
@@ -68,8 +68,6 @@
                         <h5>Admin RT 06</h5>
                     </a>
 
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img
-                            src="{{ asset('admin') }}/images/logo-mini.svg" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
                         data-toggle="minimize">
                         <span class="mdi mdi-sort-variant"></span>
@@ -123,14 +121,16 @@
                     </li>
 
                     <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{ route('education.index') }}"> --}}
-                        <i class="mdi mdi-book-open-variant menu-icon"></i>
+                        <a class="nav-link" href="{{ route('produk.index') }}">
+                        <i class="mdi mdi-shopping menu-icon"></i>
                         <span class="menu-title">Produk</span>
                         </a>
                     </li>
 
+                    
+
                     <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{ route('education.index') }}"> --}}
+                        <a class="nav-link" href="{{ route('notulen.index') }}">
                         <i class="mdi mdi-book-open-variant menu-icon"></i>
                         <span class="menu-title">Notulensi</span>
                         </a>
@@ -192,24 +192,9 @@
 
     <script src="{{ asset('admin') }}/js/jquery.cookie.js" type="text/javascript"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
-
-    <!-- tokenfield -->
+    {{-- <!-- tokenfield -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
-
-    {{-- <script>
-        $(document).ready(function() {
-            $('.summernote').summernote({
-                height: 80
-            });
-        });
-    </script>
-
-    @stack('child-script') --}}
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> --}}
 
 </body>
 

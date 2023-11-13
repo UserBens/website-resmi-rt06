@@ -1,9 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\NotulenController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostinganController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,8 @@ Route::get('/', function () {
 
 Route::resource('/dashboard', DashboardController::class)->middleware(['auth', 'verified']);
 Route::resource('/postingan', PostinganController::class)->middleware(['auth', 'verified']);
+Route::resource('/produk', ProdukController::class)->middleware(['auth', 'verified']);
+Route::resource('/notulen', NotulenController::class)->middleware(['auth', 'verified']);
 
 // Route::get('/dashboard-postingan', function () {
 //     return view('admin.postingan');
