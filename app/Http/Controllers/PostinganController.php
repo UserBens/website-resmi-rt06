@@ -13,9 +13,11 @@ class PostinganController extends Controller
      */
     public function index()
     {
+        
         $postingan = Postingan::orderBy('judul', 'asc')->get();
         return view('admin.postingan.index',[
-            'postingan' => $postingan
+            'postingan' => $postingan,
+            
         ]);
     }
 
@@ -39,11 +41,12 @@ class PostinganController extends Controller
         ]);
     
         if ($request->file('image')) {
-            // Simpan gambar ke path default storage Laravel
-            $validatedData['image'] = $request->file('image')->store('public/postingan');
-            
-            // Jika menggunakan symbolic link (storage:link), gunakan kode berikut
-            // $validatedData['image'] = 'uploads/postingan/' . $request->file('image')->store('public/uploads/postingan');
+
+            $filePath = $request->file('image')->store('public/postingan');
+    
+            $filePath = str_replace('public/', '', $filePath);
+    
+            $validatedData['image'] = $filePath;
         }
     
         Postingan::create($validatedData);

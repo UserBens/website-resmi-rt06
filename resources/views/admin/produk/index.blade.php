@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.layouts')
 
 @section('konten')
     <p class="card-title">Produk</p>

@@ -122,17 +122,17 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('produk.index') }}">
-                            <i class="mdi mdi-shopping menu-icon"></i>
-                            <span class="menu-title">Produk</span>
+                        <i class="mdi mdi-shopping menu-icon"></i>
+                        <span class="menu-title">Produk</span>
                         </a>
                     </li>
 
-
+                    
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('notulen.index') }}">
-                            <i class="mdi mdi-book-open-variant menu-icon"></i>
-                            <span class="menu-title">Notulensi</span>
+                        <i class="mdi mdi-book-open-variant menu-icon"></i>
+                        <span class="menu-title">Notulensi</span>
                         </a>
                     </li>
 
@@ -146,55 +146,7 @@
                         <div class="col-md-12 stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4>Selamat Datang Di Halaman Admin RT 06 RW 02 Desa Keputih 🙌</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mt-3">
-                        <div class="card-body">
-                            <div class="card">
-                                <div class="card-body dashboard-tabs p-0">
-                                    <div class="tab-content py-0 px-0">
-                                        <div class="tab-pane fade show active" id="overview" role="tabpanel"
-                                            aria-labelledby="overview-tab">
-                                            <div class="d-flex flex-wrap justify-content-xl-between">
-                                                <div
-                                                    class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-pencil-box me-3 icon-lg text-danger"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Total Postingan</small>
-                                                        <h5 class="me-2 mb-0 text-center">{{ $total_postingan }}</h5>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-shopping me-3 icon-lg text-success"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Total
-                                                            Produk</small>
-                                                        <h5 class="me-2 mb-0">9833550</h5>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-book-open me-3 icon-lg text-warning"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Total Notulensi</small>
-                                                        <h5 class="me-2 mb-0">2233783</h5>
-                                                    </div>
-                                                </div>
-                                                {{-- <div
-                                                    class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-flag me-3 icon-lg text-danger"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Flagged</small>
-                                                        <h5 class="me-2 mb-0">3497843</h5>
-                                                    </div>
-                                                </div> --}}
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @yield('konten')
                                 </div>
                             </div>
                         </div>
@@ -204,8 +156,7 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
-                            Pengurus
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © Pengurus
                             RT 06 RW 02 Desa Keputih Surabaya </a>2023</span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Tim Pengembang Website
                             KKN NR 5 UNTAG Surabaya </span>

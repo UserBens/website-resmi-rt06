@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Postingan;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +12,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $total_postingan = Postingan::all()->count();
+        return view('admin.dashboard', [
+            'total_postingan' => $total_postingan
+        ]);
     }
 
     /**
