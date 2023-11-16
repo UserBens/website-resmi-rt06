@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.layouts')
 
 @section('konten')
     <div class="pb-3"><a href="{{ route('postingan.index') }}" class="btn btn-secondary">Kembali</a></div>

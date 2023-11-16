@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notulen;
 use App\Models\Postingan;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,8 +15,12 @@ class DashboardController extends Controller
     public function index()
     {
         $total_postingan = Postingan::all()->count();
+        $total_produk = Produk::all()->count();
+        $total_notulen = Notulen::all()->count();
         return view('admin.dashboard', [
-            'total_postingan' => $total_postingan
+            'total_postingan' => $total_postingan,
+            'total_produk' => $total_produk,
+            'total_notulen' => $total_notulen,
         ]);
     }
 

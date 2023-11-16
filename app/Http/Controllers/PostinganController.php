@@ -13,11 +13,9 @@ class PostinganController extends Controller
      */
     public function index()
     {
-        
         $postingan = Postingan::orderBy('judul', 'asc')->get();
         return view('admin.postingan.index',[
-            'postingan' => $postingan,
-            
+            'postingan' => $postingan,       
         ]);
     }
 
@@ -87,19 +85,20 @@ class PostinganController extends Controller
     
         // Temukan postingan berdasarkan ID
         $postingan = Postingan::findOrFail($id);
-    
-        // Periksa apakah ada file gambar yang diunggah
+
         if ($request->file('image')) {
-            // Hapus gambar lama (jika ada)
+
             Storage::delete($postingan->image);
+
+            $filePath = $request->file('image')->store('public/postingan');
     
-            // Simpan gambar baru ke path default storage Laravel
-            $validatedData['image'] = $request->file('image')->store('public/postingan');
+            $filePath = str_replace('public/', '', $filePath);
+    
+            $validatedData['image'] = $filePath;
         }
-    
-        // Perbarui data postingan
+        
         $postingan->update($validatedData);
-    
+
         return redirect('/postingan')->with('success', 'Postingan berhasil diperbarui!');
     }
 

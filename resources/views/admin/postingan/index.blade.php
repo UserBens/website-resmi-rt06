@@ -24,9 +24,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->judul }}</td>
-
                         <td>{{ $item->created_at }}</td>
-
                         <td>
                             <a href='{{ route('postingan.edit', $item->id) }}' class="btn btn-sm btn-warning"><span
                                     class="mdi mdi-pencil"></span> Edit</a>
@@ -40,32 +38,32 @@
                                 </button>
                             </form>
                             <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
+                                data-bs-target="#staticBackdrop{{ $item->id }}">
                                 <span class="mdi mdi-eye-circle"></span> Lihat Gambar
-
                             </button>
                         </td>
                     </tr>
+                    <div class="modal fade" id="staticBackdrop{{ $item->id }}" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content ">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Lihat Gambar</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="bd-placeholder-img card-img-top" width="100%"
+                                        src="{{ asset('storage/' . $item->image) }}" alt="Card image">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             </tbody>
         </table>
-    </div>
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img class="bd-placeholder-img card-img-top" width="100%"
-                        src="{{ asset('storage/' . $item->image) }}" alt="Card image">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection

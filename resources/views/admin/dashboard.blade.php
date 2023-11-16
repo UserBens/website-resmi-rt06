@@ -173,7 +173,7 @@
                                                     <div class="d-flex flex-column justify-content-around">
                                                         <small class="mb-1 text-muted">Total
                                                             Produk</small>
-                                                        <h5 class="me-2 mb-0">9833550</h5>
+                                                        <h5 class="me-2 mb-0 text-center">{{ $total_produk }}</h5>
                                                     </div>
                                                 </div>
                                                 <div
@@ -181,7 +181,7 @@
                                                     <i class="mdi mdi-book-open me-3 icon-lg text-warning"></i>
                                                     <div class="d-flex flex-column justify-content-around">
                                                         <small class="mb-1 text-muted">Total Notulensi</small>
-                                                        <h5 class="me-2 mb-0">2233783</h5>
+                                                        <h5 class="me-2 mb-0 text-center">{{ $total_notulen }}</h5>
                                                     </div>
                                                 </div>
                                                 {{-- <div

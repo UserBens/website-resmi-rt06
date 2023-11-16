@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notulen;
 use Illuminate\Http\Request;
 
 class NotulenController extends Controller
@@ -11,7 +12,10 @@ class NotulenController extends Controller
      */
     public function index()
     {
-        return view('admin.notulen.index');
+        $notulen = Notulen::orderBy('judul', 'asc')->get();
+        return view('admin.notulen.index',[
+            'notulen' => $notulen,       
+        ]);
     }
 
     /**
@@ -19,7 +23,7 @@ class NotulenController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.notulen.create');
     }
 
     /**
@@ -27,7 +31,15 @@ class NotulenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'tgl_mulai' => 'required',
+            'body' => 'required'
+        ]);
+    
+        Notulen::create($validatedData);
+    
+        return redirect('/notulen')->with('success', 'Notulen baru telah ditambahkan!');
     }
 
     /**
@@ -43,7 +55,10 @@ class NotulenController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $notulen = Notulen::where('id', $id)->first();
+        return view('admin.notulen.edit', [
+            'notulen' => $notulen
+        ]);
     }
 
     /**
@@ -51,7 +66,17 @@ class NotulenController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'tgl_mulai' => 'required',
+            'body' => 'required'
+        ]);
+    
+        $notulen = Notulen::findOrFail($id);
+
+        $notulen->update($validatedData);
+    
+        return redirect('/notulen')->with('success', 'Notulen baru telah diperbarui!');
     }
 
     /**
@@ -59,6 +84,7 @@ class NotulenController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Notulen::where('id', $id)->delete();
+        return redirect('/notulen')->with('success', 'Notulen berhasil dihapus!');
     }
 }
