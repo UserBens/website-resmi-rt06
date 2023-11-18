@@ -26,6 +26,8 @@ Route::resource('/dashboard', DashboardController::class)->middleware(['auth', '
 Route::resource('/postingan', PostinganController::class)->middleware(['auth', 'verified']);
 Route::resource('/produk', ProdukController::class)->middleware(['auth', 'verified']);
 Route::resource('/notulen', NotulenController::class)->middleware(['auth', 'verified']);
+// Route::get('/notulen/search', [NotulenController::class, 'search'])->name('notulen.search');
+
 
 // Route::get('/dashboard-postingan', function () {
 //     return view('admin.postingan');

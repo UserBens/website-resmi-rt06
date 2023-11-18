@@ -10,11 +10,18 @@ class NotulenController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $notulen = Notulen::orderBy('judul', 'asc')->get();
-        return view('admin.notulen.index',[
-            'notulen' => $notulen,       
+        // $notulen = Notulen::orderBy('judul', 'asc')->paginate(6);
+        $keyword = $request->input('search');
+        $notulen = Notulen::when($keyword, function ($query, $keyword) {
+            return $query->where('judul', 'like', '%' . $keyword . '%')
+                         ->orWhere('body', 'like', '%' . $keyword . '%');
+        })->orderBy('judul', 'desc')->paginate(6);
+
+        return view('admin.notulen.index', [
+            'notulen' => $notulen,
+            'keyword' => $keyword,
         ]);
     }
 
@@ -36,9 +43,9 @@ class NotulenController extends Controller
             'tgl_mulai' => 'required',
             'body' => 'required'
         ]);
-    
+
         Notulen::create($validatedData);
-    
+
         return redirect('/notulen')->with('success', 'Notulen baru telah ditambahkan!');
     }
 
@@ -71,11 +78,11 @@ class NotulenController extends Controller
             'tgl_mulai' => 'required',
             'body' => 'required'
         ]);
-    
+
         $notulen = Notulen::findOrFail($id);
 
         $notulen->update($validatedData);
-    
+
         return redirect('/notulen')->with('success', 'Notulen baru telah diperbarui!');
     }
 
@@ -87,4 +94,5 @@ class NotulenController extends Controller
         Notulen::where('id', $id)->delete();
         return redirect('/notulen')->with('success', 'Notulen berhasil dihapus!');
     }
+
 }

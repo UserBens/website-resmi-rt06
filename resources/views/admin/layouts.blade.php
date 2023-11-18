@@ -74,6 +74,7 @@
                     </button>
                 </div>
             </div>
+
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown">
@@ -122,17 +123,17 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('produk.index') }}">
-                        <i class="mdi mdi-shopping menu-icon"></i>
-                        <span class="menu-title">Produk</span>
+                            <i class="mdi mdi-shopping menu-icon"></i>
+                            <span class="menu-title">Produk</span>
                         </a>
                     </li>
 
-                    
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('notulen.index') }}">
-                        <i class="mdi mdi-book-open-variant menu-icon"></i>
-                        <span class="menu-title">Notulensi</span>
+                            <i class="mdi mdi-book-open-variant menu-icon"></i>
+                            <span class="menu-title">Notulensi</span>
                         </a>
                     </li>
 
@@ -159,7 +160,7 @@
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © Pengurus
                             RT 06 RW 02 Desa Keputih Surabaya </a>2023</span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Tim Pengembang Website
-                            KKN NR 5 UNTAG Surabaya </span>
+                            KKN NR 5 UNTAG Surabaya 🚀 </span>
                     </div>
                 </footer>
                 <!-- partial -->

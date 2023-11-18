@@ -11,11 +11,19 @@ class PostinganController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $postingan = Postingan::orderBy('judul', 'asc')->get();
+        // $postingan = Postingan::orderBy('judul', 'asc')->paginate(6);
+        $keyword = $request->input('search');
+
+        $postingan = Postingan::when($keyword, function ($query, $keyword) {
+            return $query->where('judul', 'like', '%' . $keyword . '%')
+                         ->orWhere('body', 'like', '%' . $keyword . '%');
+        })->orderBy('judul', 'desc')->paginate(6);
+
         return view('admin.postingan.index',[
-            'postingan' => $postingan,       
+            'postingan' => $postingan,  
+            'keyword' => $keyword,     
         ]);
     }
 
