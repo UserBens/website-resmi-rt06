@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\NotulenController;
@@ -18,9 +19,7 @@ use App\Http\Controllers\PostinganController;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
+Route::get('/', [BerandaController::class, 'index']);
 
 Route::resource('/dashboard', DashboardController::class)->middleware(['auth', 'verified']);
 Route::resource('/postingan', PostinganController::class)->middleware(['auth', 'verified']);
