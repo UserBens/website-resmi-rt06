@@ -39,7 +39,7 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
             <span>KKN NR 05 UNTAG SURABAYA</span>
-            <h4>+01 123 456 789</h4>
+            <h4>RT 06 RW 02 KEPUTIH SURABAYA</h4>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -56,23 +56,23 @@
                 <div class="col-lg-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./projects.html">Posts</a></li>
-                            <li><a href="#">Product</a>
+                            <li class="active"><a href="/">Beranda</a></li>
+                            <li><a href="/post">Postingan</a></li>
+                            <li><a href="/prod">Produk</a>
                                 <ul class="dropdown">
                                     <li><a href="./Project-details.html">Produk UMKM</a></li>
                                     <li><a href="./blog-details.html">Sewa Kos</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./about.html">About</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./about.html">Tentang Kami</a></li>
+                            <li><a href="./contact.html">Kontak</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__widget">
                         <span>KKN NR 05 UNTAG SURABAYA</span>
-                        <h4>+01 123 456 789</h4>
+                        <h4>RT 06 RW 02 KEPUTIH SURABAYA</h4>
                     </div>
                 </div>
             </div>
@@ -96,9 +96,10 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="hero__items set-bg" data-setbg="pengunjung/img/dok1.jpeg">
+            <div class="hero__items set-bg" data-setbg="pengunjung/img/dokkomposter1.jpeg">
                 <div class="hero__text">
-                    <h2>Quality is not only our standard.</h2>
+                    <h4 class="text-white">Tim Pengembang Website</h4>
+                    <h2 class="mt-3">Kelompok KKN NR 5 UNTAG SURABAYA</h2>
                     <div class="hero__social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -109,9 +110,8 @@
             </div>
             <div class="hero__items set-bg" data-setbg="pengunjung/img/dok2.jpeg">
                 <div class="hero__text">
-                    <h2>Quality is not only our standard.</h2>
-                    <a href="#" class="primary-btn">See Project</a>
-                    <a href="#" class="more_btn">Discover more</a>
+                    <h4 class="text-white">Selamat Datang Di Halaman</h4>
+                    <h2 class="mt-3">Website Warga RT 06 </h2>
                     <div class="hero__social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -119,7 +119,19 @@
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
-            </div> --}}
+            </div>
+            <div class="hero__items set-bg" data-setbg="pengunjung/img/dokkomposter1.jpeg">
+                <div class="hero__text">
+                    <h4 class="text-white">Selamat Datang Di Halaman</h4>
+                    <h2 class="mt-3">Website Warga RT 06 </h2>
+                    <div class="hero__social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Hero Section End -->
@@ -165,7 +177,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team__btn">
-                        <a href="#" class="primary-btn normal-btn">View All</a>
+                        <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
                     </div>
                 </div>
             </div>
@@ -176,13 +188,13 @@
                             <div class="team__text">
                                 <div class="team__title">
                                     <h5>{{ $item->judul }}</h5>
-                                    <span>CEO & Founder</span>
+                                    {{-- <span>CEO & Founder</span> --}}
                                 </div>
-                                <p>{{ $item->created_at }}</p>
+                                <p>{{ $item->created_at->diffForHumans() }}</p>
                                 <div class="team__social">
                                     {{-- <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a> --}}
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-external-link"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -198,42 +210,25 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-10">
                     <div class="blog__details__content">
-                        <div class="blog__details__title">
-                            <ul>
-                                <li>December 20, 2019 </li>
-                                <li>By John Doe</li>
-                                <li>Planning</li>
-                            </ul>
-                            <h2>Target and Amazon Shopping List for Home Stagers</h2>
-                            {{-- <img src="img/blog/details/blog-details.jpg" alt=""> --}}
-                            <p>Forget Ebay and other forms of advertising for your property that costs you hard earned
-                                money. Properties have ready several locations around the world to take your free
-                                listings for any luxury property you have.</p>
+                        <div class="section-title mb-2">
+                            <span>Postingan Terbaru</span>
+                            {{-- <h2>Postingan</h2> --}}
                         </div>
-                        <div class="blog__details__text">
-                            <p>Each location web site is purpose built so every Search Engine will pick up new listings
-                                within minutes. This way your customers only have to type in keywords relating to their
-                                search for a luxury home and the Search Engine will show the Invest Asset web site
-                                applicable to their location they are looking for.</p>
-                            <p>Most real estate companies are way too busy with selling their client’s properties to put
-                                any effort forth to their web site. Hence, making it difficult for web surfers to find
-                                their listings.</p>
-                        </div>
-                        <div class="blog__item__quote">
-                            <p>“Without question this is the stager you want to use! Jennifer staged a hard to sell home
-                                for me and we sold it fast! …. Jennifer made it possible.”</p>
-                            <span>Martin Lockhart</span>
-                        </div>
-                        <div class="blog__details__text">
-                            <p>Now times have changed and we at Investment Assets Properties are thinking of the
-                                customer before the business. If you have a property in a location not listed at
-                                Investment Assets Properties. Don’t worry. A quick email to us will ensure your location
-                                is built to accommodate your listing.</p>
-                            <p>Selling your luxury home, condominium or property should not be a painstaking event. It
-                                should be easy and stress free and it should be able to be advertised on a global scale
-                                for free. Investment Assets Properties can and will do this for you in a hassle free
-                                way.</p>
-                        </div>
+                        @foreach ($kontenpost as $item)
+                            <div class="blog__details__title">
+                                <ul>
+                                    <li>{{ $item->created_at->diffForHumans() }}</li>
+                                </ul>
+                                <h2>{{ $item->judul }}</h2>
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                                <p style="text-align: justify;" class="mb-3">{!! (Str::limit($item->body, 800)) !!} </p>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mt-4">
+                                <div class="latest__btn">
+                                    <a href="#" class="primary-btn normal-btn">Selengkapnya</a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -279,7 +274,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="latest__btn">
-                        <a href="#" class="primary-btn normal-btn">View All</a>
+                        <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
                     </div>
                 </div>
             </div>
@@ -291,8 +286,8 @@
                                 <img src="{{ asset('storage/' . $item->image) }}" alt="">
                             </div>
                             <div class="latest__item__text">
-                                <span>Architecture</span>
-                                <h4>{!! $item->deskripsi_produk !!}</h4>
+                                <span>{{ $item->created_at->diffForHumans() }}</span>
+                                <h4>{{ $item->nama_produk }}</h4>
                                 <a href="#">Read more</a>
                             </div>
                         </div>
@@ -308,42 +303,25 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-10">
                     <div class="blog__details__content">
-                        <div class="blog__details__title">
-                            <ul>
-                                <li>December 20, 2019 </li>
-                                <li>By John Doe</li>
-                                <li>Planning</li>
-                            </ul>
-                            <h2>Target and Amazon Shopping List for Home Stagers</h2>
-                            {{-- <img src="img/blog/details/blog-details.jpg" alt=""> --}}
-                            <p>Forget Ebay and other forms of advertising for your property that costs you hard earned
-                                money. Properties have ready several locations around the world to take your free
-                                listings for any luxury property you have.</p>
+                        <div class="section-title mb-2">
+                            <span>Produk Terbaru</span>
+                            {{-- <h2>Postingan</h2> --}}
                         </div>
-                        <div class="blog__details__text">
-                            <p>Each location web site is purpose built so every Search Engine will pick up new listings
-                                within minutes. This way your customers only have to type in keywords relating to their
-                                search for a luxury home and the Search Engine will show the Invest Asset web site
-                                applicable to their location they are looking for.</p>
-                            <p>Most real estate companies are way too busy with selling their client’s properties to put
-                                any effort forth to their web site. Hence, making it difficult for web surfers to find
-                                their listings.</p>
-                        </div>
-                        <div class="blog__item__quote">
-                            <p>“Without question this is the stager you want to use! Jennifer staged a hard to sell home
-                                for me and we sold it fast! …. Jennifer made it possible.”</p>
-                            <span>Martin Lockhart</span>
-                        </div>
-                        <div class="blog__details__text">
-                            <p>Now times have changed and we at Investment Assets Properties are thinking of the
-                                customer before the business. If you have a property in a location not listed at
-                                Investment Assets Properties. Don’t worry. A quick email to us will ensure your location
-                                is built to accommodate your listing.</p>
-                            <p>Selling your luxury home, condominium or property should not be a painstaking event. It
-                                should be easy and stress free and it should be able to be advertised on a global scale
-                                for free. Investment Assets Properties can and will do this for you in a hassle free
-                                way.</p>
-                        </div>
+                        @foreach ($kontenprod as $item)
+                            <div class="blog__details__title">
+                                <ul>
+                                    <li>{{ $item->created_at->diffForHumans() }}</li>
+                                </ul>
+                                <h2>{{ $item->nama_produk }}</h2>
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                                <p style="text-align: justify;" class="mb-3 mt-2">{!! (Str::limit($item->deskripsi_produk, 800)) !!} </p>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mt-4 mb-5">
+                                <div class="latest__btn">
+                                    <a href="#" class="primary-btn normal-btn">Selengkapnya</a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -359,12 +337,12 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="pengunjung/img/logo.png" alt=""></a>
+                            {{-- <a href="#"><img src="pengunjung/img/logo.png" alt=""></a> --}}
                         </div>
-                        <p>7176 Blue Spring Lane <br />Santa Monica, CA 90403</p>
+                        <p>RT 06 RW 02 <br />Desa Keputih Surabaya</p>
                         <ul>
-                            <li>Info.colorlib@gmail.com</li>
-                            <li>+84 123 456 789</li>
+                            <li>KKN NR 5</li>
+                            <li>Universitas 17 Agustus 1945 Surabaya</li>
                         </ul>
                         <div class="footer__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -376,28 +354,28 @@
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Company</h6>
+                        <h6>Navigasi</h6>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Our Works</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Beranda</a></li>
+                            <li><a href="#">Postingan</a></li>
+                            <li><a href="#">Produk</a></li>
+                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="#">Kontak</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Services</h6>
+                        <h6>Kategori</h6>
                         <ul>
-                            <li><a href="#">Architecture</a></li>
-                            <li><a href="#">Interior Design</a></li>
-                            <li><a href="#">Exterior Design</a></li>
-                            <li><a href="#">Planning</a></li>
+                            <li><a href="#">Produk UMKM</a></li>
+                            <li><a href="#">Sewa Kos</a></li>
+                            <li><a href="#">Postingan dan Kegiatan Masyarakat</a></li>
+                            {{-- <li><a href="#">Planning</a></li> --}}
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__address">
                         <h6>Get In Touch</h6>
                         <p>7176 Blue Spring Lane <br />Santa Monica, CA 90403</p>
@@ -406,7 +384,7 @@
                             <li>+84 123 456 789</li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="copyright">
                 <div class="row">
@@ -415,16 +393,15 @@
                             <p>Copyright ©
                                 <script>
                                     document.write(new Date().getFullYear());
-                                </script> All rights reserved | This template is made with <i
-                                    class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                    target="_blank">Colorlib</a>
+                                </script> Warga RT 06 RW 02 | Desa Keputih Surabaya <i
+                                    class="fa fa-heart-o" aria-hidden="true"></i>
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-5">
                         <div class="copyright__widget">
-                            <a href="#">Terms of use</a>
-                            <a href="#">Privacy Policy</a>
+                            <a href="#">KKN NR 5 </a>
+                            <a href="#">Universitas 17 Agustus 1945 Surabaya</a>
                         </div>
                     </div>
                 </div>

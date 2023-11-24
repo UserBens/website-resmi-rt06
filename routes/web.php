@@ -20,6 +20,8 @@ use App\Http\Controllers\PostinganController;
 */
 
 Route::get('/', [BerandaController::class, 'index']);
+Route::get('/post', [BerandaController::class, 'postingan'])->name('post');
+Route::get('/prod', [BerandaController::class, 'produk'])->name('prod');
 
 Route::resource('/dashboard', DashboardController::class)->middleware(['auth', 'verified']);
 Route::resource('/postingan', PostinganController::class)->middleware(['auth', 'verified']);
