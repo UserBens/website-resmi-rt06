@@ -22,6 +22,9 @@ use App\Http\Controllers\PostinganController;
 Route::get('/', [BerandaController::class, 'index']);
 Route::get('/post', [BerandaController::class, 'postingan'])->name('post');
 Route::get('/prod', [BerandaController::class, 'produk'])->name('prod');
+Route::get('/ttg-kami', [BerandaController::class, 'tentangkami'])->name('ttgkami');
+Route::get('/detail-post/{id}', [BerandaController::class, 'detailpost'])->name('detailpost');
+Route::get('/detail-prod/{id}', [BerandaController::class, 'detailprod'])->name('detailprod');
 
 Route::resource('/dashboard', DashboardController::class)->middleware(['auth', 'verified']);
 Route::resource('/postingan', PostinganController::class)->middleware(['auth', 'verified']);
@@ -33,8 +36,6 @@ Route::resource('/notulen', NotulenController::class)->middleware(['auth', 'veri
 // Route::get('/dashboard-postingan', function () {
 //     return view('admin.postingan');
 // })->middleware(['auth', 'verified'])->name('postingan');
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

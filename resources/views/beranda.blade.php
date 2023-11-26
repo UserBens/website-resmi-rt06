@@ -64,8 +64,8 @@
                                     <li><a href="./blog-details.html">Sewa Kos</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./about.html">Tentang Kami</a></li>
-                            <li><a href="./contact.html">Kontak</a></li>
+                            <li><a href="/ttg-kami">Tentang Kami</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -84,7 +84,7 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="pengunjung/img/dok3.jpeg">
+            <div class="hero__items set-bg" data-setbg="pengunjung/img/launching.jpg">
                 <div class="hero__text">
                     <h4 class="text-white">Selamat Datang Di Halaman</h4>
                     <h2 class="mt-3">Website Warga RT 06 </h2>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="pengunjung/img/dok2.jpeg">
+            <div class="hero__items set-bg" data-setbg="pengunjung/img/demo.jpg">
                 <div class="hero__text">
                     <h4 class="text-white">Selamat Datang Di Halaman</h4>
                     <h2 class="mt-3">Website Warga RT 06 </h2>
@@ -120,10 +120,10 @@
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="pengunjung/img/dokkomposter1.jpeg">
+            <div class="hero__items set-bg" data-setbg="pengunjung/img/demo2.jpg">
                 <div class="hero__text">
-                    <h4 class="text-white">Selamat Datang Di Halaman</h4>
-                    <h2 class="mt-3">Website Warga RT 06 </h2>
+                    <h4 class="text-white">Tim Pengembang Website</h4>
+                    <h2 class="mt-3">Kelompok KKN NR 5 UNTAG SURABAYA </h2>
                     <div class="hero__social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team__btn">
-                        <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
+                        <a href="/post" class="primary-btn normal-btn">Lihat Semua</a>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
                                 <div class="team__social">
                                     {{-- <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a> --}}
-                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                    <a href="{{ route('detailpost', $item->id) }}"><i class="fa fa-external-link"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -210,10 +210,6 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-10">
                     <div class="blog__details__content">
-                        <div class="section-title mb-2">
-                            <span>Postingan Terbaru</span>
-                            {{-- <h2>Postingan</h2> --}}
-                        </div>
                         @foreach ($kontenpost as $item)
                             <div class="blog__details__title">
                                 <ul>
@@ -225,7 +221,7 @@
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 mt-4">
                                 <div class="latest__btn">
-                                    <a href="#" class="primary-btn normal-btn">Selengkapnya</a>
+                                    <a href="{{ route('detailpost', $item->id) }}" class="primary-btn normal-btn">Selengkapnya</a>
                                 </div>
                             </div>
                         @endforeach
@@ -274,7 +270,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="latest__btn">
-                        <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
+                        <a href="/prod" class="primary-btn normal-btn">Lihat Semua</a>
                     </div>
                 </div>
             </div>
@@ -288,7 +284,7 @@
                             <div class="latest__item__text">
                                 <span>{{ $item->created_at->diffForHumans() }}</span>
                                 <h4>{{ $item->nama_produk }}</h4>
-                                <a href="#">Read more</a>
+                                <a href="{{ route('detailprod', $item->id) }}">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -303,10 +299,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-10">
                     <div class="blog__details__content">
-                        <div class="section-title mb-2">
-                            <span>Produk Terbaru</span>
-                            {{-- <h2>Postingan</h2> --}}
-                        </div>
+                        
                         @foreach ($kontenprod as $item)
                             <div class="blog__details__title">
                                 <ul>

@@ -63,8 +63,8 @@
                                     <li><a href="./blog-details.html">Sewa Kos</a></li>
                                 </ul> --}}
                             </li>
-                            <li><a href="./about.html">Tentang Kami</a></li>
-                            <li><a href="./contact.html">Kontak</a></li>
+                            <li><a href="/ttg-kami">Tentang Kami</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -123,7 +123,7 @@
                                     <img src="{{ asset('storage/' . $item->image) }}" alt="">
                                     <div class="blog__item__text">
                                         <p class="text-justify">{!! strip_tags(Str::limit($item->body, 300)) !!} </p>
-                                        <a href="#">Read more</a>
+                                        <a href="{{ route('detailpost', $item->id) }}">Read more</a>
                                     </div>
                                 </div>
                             </div>

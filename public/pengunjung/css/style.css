@@ -112,7 +112,7 @@ ol {
 -----------------------*/
 
 .section-title {
-	margin-bottom: 40px;
+	margin-bottom: 12px;
 }
 
 .section-title span {
@@ -931,7 +931,7 @@ ol {
 
 .team {
 	padding-top: 120px;
-	padding-bottom: 90px;
+	/* padding-bottom: 90px; */
 }
 
 .team__btn {
@@ -1103,7 +1103,7 @@ ol {
 
 .latest {
 	padding-top: 70px;
-	padding-bottom: 90px;
+	/* padding-bottom: 90px; */
 }
 
 .latest__btn {
@@ -2129,7 +2129,8 @@ ol {
 }
 
 .blog__details__title {
-	margin-bottom: 32px;
+	margin-bottom: 20px;
+	margin-top: 70px;
 	text-align: justify;
 }
 
@@ -3079,3 +3080,16 @@ ol {
 	background-color: #333; /* Change color on hover if desired */
 }
 
+
+
+.detail_post_produk {
+    padding-top: 0px; /* Sesuaikan margin sesuai kebutuhan */
+    padding-bottom: 70px; /* Sesuaikan margin sesuai kebutuhan */
+    /* border-top: 1px solid #ddd; Warna dan ketebalan garis */
+}
+
+.detail_post_post {
+    padding-top: 80px; /* Sesuaikan margin sesuai kebutuhan */
+    padding-bottom: 90px; /* Sesuaikan margin sesuai kebutuhan */
+    /* border-top: 1px solid #ddd; Warna dan ketebalan garis */
+}
