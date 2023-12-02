@@ -23,6 +23,7 @@ Route::get('/', [BerandaController::class, 'index']);
 Route::get('/post', [BerandaController::class, 'postingan'])->name('post');
 Route::get('/prod', [BerandaController::class, 'produk'])->name('prod');
 Route::get('/ttg-kami', [BerandaController::class, 'tentangkami'])->name('ttgkami');
+Route::get('/kontak', [BerandaController::class, 'kontak'])->name('kontak');
 Route::get('/detail-post/{id}', [BerandaController::class, 'detailpost'])->name('detailpost');
 Route::get('/detail-prod/{id}', [BerandaController::class, 'detailprod'])->name('detailprod');
 

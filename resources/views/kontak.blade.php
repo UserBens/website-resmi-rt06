@@ -7,7 +7,7 @@
     <meta name="keywords" content="Staging, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Postingan | Website RT 06</title>
+    <title>Kontak | Website RT 06</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -33,13 +33,12 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__logo">
-            {{-- <a href="#"><img src="pengunjung/img/logo.png" alt=""></a> --}}
+            <a href="#"><img src="img/logo.png" alt=""></a>
         </div>
-        <div id="mobile-menu-wrap">
-            <div class="offcanvas__widget">
-                <span>KKN NR 05 UNTAG SURABAYA</span>
-                <h4>RT 06 RW 02 Desa Keputih Surabaya</h4>
-            </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__widget">
+            <span>Call us for any questions</span>
+            <h4>+01 123 456 789</h4>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -58,14 +57,14 @@
                         <ul>
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
-                            <li class="active"><a href="/prod">Produk</a>
+                            <li><a href="/prod">Produk</a>
                                 {{-- <ul class="dropdown">
                                     <li><a href="./Project-details.html">Produk UMKM</a></li>
                                     <li><a href="./blog-details.html">Sewa Kos</a></li>
                                 </ul> --}}
                             </li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
-                            <li><a href="/kontak">Kontak</a></li>
+                            <li class="active"><a href="/kontak">Kontak</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -81,17 +80,18 @@
     </header>
     <!-- Header Section End -->
 
+    
     <!-- Breadcrumb Section Begin -->
     <div class="breadcrumb-option spad set-bg" data-setbg="pengunjung/img/dok3.jpeg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Produk Lainnya</h2>
+                        <h2>Kontak</h2>
                         <div class="breadcrumb__links">
                             <a href="/">Home</a>
                             {{-- <a href="/post">Posts</a> --}}
-                            <span>Produk</span>
+                            <span>Kontak</span>
                         </div>
                     </div>
                 </div>
@@ -100,78 +100,65 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-    <!-- Blog Section Begin -->
-    <section class="blog spad">
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="blog__sidebar__search mb-5">
-                        <form action="{{ route('prod') }}" method="get"> <!-- Specify your search route -->
-                            <input type="text" name="search" placeholder="Cari Produk"
-                                value="{{ $keyword ?? '' }}">
-                            <button type="submit"><span class="icon_search"></span></button>
-                        </form>
-                    </div>
-
-                    @if ($prod->count() > 0)
-                        @foreach ($prod as $item)
-                            <div class="blog__item__list">
-                                <div class="blog__item">
-                                    <ul>
-                                        <li>{{ $item->created_at->diffForHumans() }}</li>
-                                    </ul>
-                                    <h2>{{ $item->nama_produk }}</h2>
-                                    <img src="{{ asset('storage/' . $item->image) }}" alt="">
-                                    <div class="blog__item__text">
-                                        <p class="text-justify">{!! strip_tags(Str::limit($item->deskripsi_produk, 300)) !!} </p>
-                                        <a href="{{ route('detailprod', $item->id) }}">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                        <div class="d-flex justify-content-center mt-4">
-                            {{ $prod->appends(['search' => $keyword])->links('pagination::bootstrap-4') }}
+                <div class="col-lg-5">
+                    <div class="contact__text">
+                        <div class="section-title">
+                            <span>Information</span>
+                            <h2>Contact Details</h2>
                         </div>
-                    @else
-                        <h4 class="mb-4">Produk Yang Anda Cari Tidak Dapat Ditemukan..</h4>
-                        <span>
-                            <button class="goback-button"
-                                onclick="window.location.href='{{ route('prod') }}'">Kembali</button>
-                        </span>
-                    @endif
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="blog__sidebar">
-                        <div class="blog__sidebar__feature">
-                            <h5>Postingan Terbaru</h5>
-                            @foreach ($postsidebar as $item)
-                                <a href="#" class="blog__sidebar__feature__item">
-                                    {{-- <div class="blog__sidebar__feature__item__pic">
-                                    </div> --}}
-                                    <img src="{{ asset('storage/' . $item->image) }}" alt="">
-                                    <div class="blog__sidebar__feature__item__text">
-                                        <h6 class="mt-2">{{ $item->judul }}</h6>
-                                        <span class="mt-1">{{ $item->created_at->diffForHumans() }}</span>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-
-                        <div class="blog__sidebar__social">
-                            <h5>Follow Us</h5>
-                            {{-- <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a> --}}
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            {{-- <a href="#"><i class="fa fa-linkedin"></i></a> --}}
-                        </div>
+                        <p>As you might expect of a company that began as a high-end interiors contractor, we pay strict
+                            attention.</p>
                     </div>
                 </div>
-
             </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <img src="pengunjung/img/contact/ci-1.png" alt="">
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h5>Phone Number</h5>
+                            <span>+01 123 456 789</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <img src="pengunjung/img/contact/ci-2.png" alt="">
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h5>Email Address</h5>
+                            <span>info.colorlib@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact__widget__item last__item">
+                        <div class="contact__widget__item__icon">
+                            <img src="pengunjung/img/contact/ci-3.png" alt="">
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h5>Office Location</h5>
+                            <span>7176 Blue Spring Lane, NY, US</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087.069761554938!2d-74.2175599360452!3d40.767139456514954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c254b5958982c3%3A0xb6ab3931055a2612!2sEast%20Orange%2C%20NJ%2C%20USA!5e0!3m2!1sen!2sbd!4v1581710470843!5m2!1sen!2sbd"
+                    height="460" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            
         </div>
     </section>
-    <!-- Blog Section End -->
+    <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer set-bg" data-setbg="pengunjung/img/footer-bg.jpg">
@@ -200,11 +187,11 @@
                     <div class="footer__widget">
                         <h6>Navigasi</h6>
                         <ul>
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Postingan</a></li>
-                            <li><a href="#">Produk</a></li>
-                            <li><a href="#">Tentang Kami</a></li>
-                            <li><a href="#">Kontak</a></li>
+                            <li><a href="/">Beranda</a></li>
+                            <li><a href="/post">Postingan</a></li>
+                            <li><a href="/prod">Produk</a></li>
+                            <li><a href="/ttg-kami">Tentang Kami</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                         </ul>
                     </div>
                 </div>

@@ -89,4 +89,9 @@ class BerandaController extends Controller
             'prod' => $prod,
         ]);
     }
+
+    public function kontak()
+    {
+        return view('kontak');
+    }
 }

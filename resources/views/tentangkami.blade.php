@@ -7,7 +7,7 @@
     <meta name="keywords" content="Staging, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Postingan | Website RT 06</title>
+    <title>Tentang Kami | Website RT 06</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -33,7 +33,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__logo">
-            <a href="#"><img src="pengunjung/img/logo.png" alt=""></a>
+            {{-- <a href="#"><img src="pengunjung/img/logo.png" alt=""></a> --}}
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -64,7 +64,7 @@
                                 </ul> --}}
                             </li>
                             <li class="active"><a href="/ttg-kami">Tentang Kami</a></li>
-                            <li><a href="./contact.html">Kontak</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -109,11 +109,11 @@
                         <h2>Postingan</h2>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                {{-- <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team__btn">
                         <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 @foreach ($postingan as $item)
@@ -148,13 +148,13 @@
                         <h2>Postingan</h2>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                {{-- <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team__btn">
                         <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
-            <div class="row">
+            <div class="row mb-4">
                 @foreach ($postingan as $item)
                     <div class="col-lg-4 col-md-6">
                         <div class="team__item set-bg" data-setbg="{{ asset('storage/' . $item->image) }}">

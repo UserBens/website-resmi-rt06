@@ -7,7 +7,7 @@
     <meta name="keywords" content="Staging, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Detail Postingan | Website RT 06</title>
+    <title>Detail Produk | Website RT 06</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Detail Postingan</h2>
+                        <h2>Detail Produk</h2>
                         <div class="breadcrumb__links">
                             <a href="/">Home</a>
                             <a href="/prod"><span>Produk</span></a>

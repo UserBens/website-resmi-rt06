@@ -311,7 +311,7 @@
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 mt-4 mb-5">
                                 <div class="latest__btn">
-                                    <a href="#" class="primary-btn normal-btn">Selengkapnya</a>
+                                    <a href="{{ route('detailprod', $item->id) }}" class="primary-btn normal-btn">Selengkapnya</a>
                                 </div>
                             </div>
                         @endforeach
@@ -349,11 +349,11 @@
                     <div class="footer__widget">
                         <h6>Navigasi</h6>
                         <ul>
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Postingan</a></li>
-                            <li><a href="#">Produk</a></li>
-                            <li><a href="#">Tentang Kami</a></li>
-                            <li><a href="#">Kontak</a></li>
+                            <li><a href="/">Beranda</a></li>
+                            <li><a href="/post">Postingan</a></li>
+                            <li><a href="/prod">Produk</a></li>
+                            <li><a href="/ttg-kami">Tentang Kami</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                         </ul>
                     </div>
                 </div>
