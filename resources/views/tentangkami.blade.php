@@ -99,14 +99,66 @@
     </div>
     <!-- Breadcrumb Section End -->
 
+    <section class="about-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="about__text about__page__text">
+                        <div class="section-title">
+                            <span>Selamat Datang Di Halaman</span>
+                            <h2>Website RT 06</h2>
+                        </div>
+                        <div class="about__para__text">
+                            <p>Kami dengan bangga mempersembahkan website ini sebagai hasil kolaborasi antara masyarakat
+                                Desa Keputih dan Kelompok KKN NR 05 dari Universitas 17 Agustus 1945 Surabaya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="about__page__services">
+                        <div class="about__page__services__text">
+                            <p>Di sini, Anda akan menemukan informasi terkini mengenai kehidupan sehari-hari, kegiatan,
+                                dan berbagai potensi yang dimiliki oleh Desa Keputih. Dengan tekad untuk meningkatkan
+                                kesejahteraan masyarakat, kami berkomitmen untuk menyajikan konten yang informatif,
+                                inspiratif, dan bermanfaat.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="services__item">
+                                    <img src="img/services/services-5.png" alt="">
+                                    <h4>KELOMPOK KKN NR 05 </h4>
+                                    <p>Kami mengundang Anda untuk menjelajahi setiap bagian dari website ini, mulai dari
+                                        profil Desa Keputih, berita terkini, inisiatif pembangunan, hingga kegiatan
+                                        sosial dan budaya yang dilaksanakan di lingkungan kami. Jangan ragu untuk
+                                        memberikan masukan atau saran yang dapat membantu kami lebih baik lagi dalam
+                                        memenuhi kebutuhan dan harapan masyarakat.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="services__item">
+                                    <img src="img/services/services-6.png" alt="">
+                                    <h4>UNTAG SURABAYA</h4>
+                                    <p>Terima kasih atas dukungan dan partisipasinya dalam membangun Desa Keputih
+                                        menjadi tempat yang lebih baik untuk semua. Selamat menikmati eksplorasi Anda di
+                                        halaman website resmi Desa Keputih, RT 06/RW 02, Surabaya!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Blog Section Begin -->
     <section class="team spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-sm-6">
                     <div class="section-title">
-                        <span>Kegiatan Terbaru</span>
-                        <h2>Postingan</h2>
+                        <span>Susunan Pengurus</span>
+                        <h2>Pengurus RT 06</h2>
                     </div>
                 </div>
                 {{-- <div class="col-lg-3 col-md-4 col-sm-6">
@@ -138,14 +190,28 @@
         </div>
     </section>
 
+    {{-- <section class="callto spad set-bg" data-setbg="{{ asset('storage/' . $item->image) }}">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <div class="callto__text">
+                        <span>Why choose us?</span>
+                        <h2>Our ability to bring outstanding results to our customers.</h2>
+                        <a href="#" class="primary-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+
     {{-- <h2 class="justify-content-center">tim pengembang website</h2> --}}
     <section class="team spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-sm-6">
                     <div class="section-title">
-                        <span>Kegiatan Terbaru</span>
-                        <h2>Postingan</h2>
+                        <span>Susunan Pengurus</span>
+                        <h2>Karang Taruna RT 06</h2>
                     </div>
                 </div>
                 {{-- <div class="col-lg-3 col-md-4 col-sm-6">
@@ -194,10 +260,10 @@
                             <li>Universitas 17 Agustus 1945 Surabaya</li>
                         </ul>
                         <div class="footer__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            {{-- <a href="#"><i class="fa fa-facebook"></i></a> --}}
+                            {{-- <a href="#"><i class="fa fa-twitter"></i></a> --}}
                             <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            {{-- <a href="#"><i class="fa fa-linkedin"></i></a> --}}
                         </div>
                     </div>
                 </div>
@@ -205,11 +271,11 @@
                     <div class="footer__widget">
                         <h6>Navigasi</h6>
                         <ul>
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Postingan</a></li>
-                            <li><a href="#">Produk</a></li>
-                            <li><a href="#">Tentang Kami</a></li>
-                            <li><a href="#">Kontak</a></li>
+                            <li><a href="/">Beranda</a></li>
+                            <li><a href="/post">Postingan</a></li>
+                            <li><a href="/prod">Produk</a></li>
+                            <li><a href="/ttg-kami">Tentang Kami</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                         </ul>
                     </div>
                 </div>
@@ -217,9 +283,9 @@
                     <div class="footer__widget">
                         <h6>Kategori</h6>
                         <ul>
-                            <li><a href="#">Produk UMKM</a></li>
-                            <li><a href="#">Sewa Kos</a></li>
-                            <li><a href="#">Postingan dan Kegiatan Masyarakat</a></li>
+                            <li><a href="/prod">Produk UMKM</a></li>
+                            <li><a href="/prod">Sewa Kos</a></li>
+                            <li><a href="/post">Postingan dan Kegiatan Masyarakat</a></li>
                             {{-- <li><a href="#">Planning</a></li> --}}
                         </ul>
                     </div>

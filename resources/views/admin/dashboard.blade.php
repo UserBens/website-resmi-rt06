@@ -127,12 +127,17 @@
                         </a>
                     </li>
 
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('notulen.index') }}">
                             <i class="mdi mdi-book-open-variant menu-icon"></i>
                             <span class="menu-title">Notulensi</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('pengurus.index') }}">
+                            <i class="mdi mdi-book-open-variant menu-icon"></i>
+                            <span class="menu-title">Pengurus</span>
                         </a>
                     </li>
 

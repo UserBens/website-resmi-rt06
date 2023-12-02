@@ -11,10 +11,10 @@ class BerandaController extends Controller
     public function index()
     {
         return view('beranda', [
-            'produk' => Produk::orderBy('id', 'desc')->take(3)->get(),
-            'postingan' => Postingan::orderBy('id', 'desc')->take(3)->get(),
-            'kontenpost' => Postingan::orderBy('id', 'desc')->take(1)->get(),
-            'kontenprod' => Produk::orderBy('id', 'desc')->take(1)->get(),
+            'produk' => Produk::latest()->take(3)->get(),
+            'postingan' => Postingan::latest()->take(3)->get(),
+            'kontenpost' => Postingan::latest()->take(1)->get(),
+            'kontenprod' => Produk::latest()->take(1)->get(),
         ]);
     }
 
@@ -25,10 +25,10 @@ class BerandaController extends Controller
         $postingan = Postingan::when($keyword, function ($query, $keyword) {
             return $query->where('judul', 'like', '%' . $keyword . '%')
                 ->orWhere('body', 'like', '%' . $keyword . '%');
-        })->orderBy('judul', 'desc')->paginate(3)->withQueryString();
+        })->latest()->paginate(3)->withQueryString();
 
         return view('postingan', [
-            'produk' => Produk::orderBy('id', 'desc')->take(3)->get(),
+            'produk' => Produk::latest()->take(3)->get(),
             // 'postsidebar' => Postingan::orderBy('id', 'asc')->take(3)->get(),
             'postingan' => $postingan,
             'keyword' => $keyword,
@@ -42,11 +42,11 @@ class BerandaController extends Controller
         $prod = Produk::when($keyword, function ($query, $keyword) {
             return $query->where('nama_produk', 'like', '%' . $keyword . '%')
                 ->orWhere('deskripsi_produk', 'like', '%' . $keyword . '%');
-        })->orderBy('nama_produk', 'desc')->paginate(3)->withQueryString();
+        })->latest()->paginate(3)->withQueryString();
 
         return view('produk', [
             'produk' => Produk::orderBy('id', 'desc')->take(3)->get(),
-            'postsidebar' => Postingan::orderBy('id', 'asc')->take(3)->get(),
+            'postsidebar' => Postingan::latest()->take(3)->get(),
             'prod' => $prod,
             'keyword' => $keyword,
         ]);

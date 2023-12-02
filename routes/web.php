@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\NotulenController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostinganController;
 
@@ -31,6 +32,7 @@ Route::resource('/dashboard', DashboardController::class)->middleware(['auth', '
 Route::resource('/postingan', PostinganController::class)->middleware(['auth', 'verified']);
 Route::resource('/produk', ProdukController::class)->middleware(['auth', 'verified']);
 Route::resource('/notulen', NotulenController::class)->middleware(['auth', 'verified']);
+Route::resource('/pengurus', PengurusController::class)->middleware(['auth', 'verified']);
 // Route::get('/notulen/search', [NotulenController::class, 'search'])->name('notulen.search');
 
 

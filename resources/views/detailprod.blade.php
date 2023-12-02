@@ -199,7 +199,7 @@
     </section>
 
     <!-- Footer Section Begin -->
-    <footer class="footer set-bg" data-setbg="{{ asset('pengunjung/img/footer-bg.jpg') }}">
+    <footer class="footer set-bg" data-setbg="pengunjung/img/footer-bg.jpg">
         <div class="container">
 
             <div class="row">
@@ -214,10 +214,10 @@
                             <li>Universitas 17 Agustus 1945 Surabaya</li>
                         </ul>
                         <div class="footer__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            {{-- <a href="#"><i class="fa fa-facebook"></i></a> --}}
+                            {{-- <a href="#"><i class="fa fa-twitter"></i></a> --}}
                             <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            {{-- <a href="#"><i class="fa fa-linkedin"></i></a> --}}
                         </div>
                     </div>
                 </div>
@@ -225,11 +225,11 @@
                     <div class="footer__widget">
                         <h6>Navigasi</h6>
                         <ul>
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Postingan</a></li>
-                            <li><a href="#">Produk</a></li>
-                            <li><a href="#">Tentang Kami</a></li>
-                            <li><a href="#">Kontak</a></li>
+                            <li><a href="/">Beranda</a></li>
+                            <li><a href="/post">Postingan</a></li>
+                            <li><a href="/prod">Produk</a></li>
+                            <li><a href="/ttg-kami">Tentang Kami</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                         </ul>
                     </div>
                 </div>
@@ -237,9 +237,9 @@
                     <div class="footer__widget">
                         <h6>Kategori</h6>
                         <ul>
-                            <li><a href="#">Produk UMKM</a></li>
-                            <li><a href="#">Sewa Kos</a></li>
-                            <li><a href="#">Postingan dan Kegiatan Masyarakat</a></li>
+                            <li><a href="/prod">Produk UMKM</a></li>
+                            <li><a href="/prod">Sewa Kos</a></li>
+                            <li><a href="/post">Postingan dan Kegiatan Masyarakat</a></li>
                             {{-- <li><a href="#">Planning</a></li> --}}
                         </ul>
                     </div>

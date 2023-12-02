@@ -1497,7 +1497,7 @@ ol {
 
 .about-page {
 	padding-top: 120px;
-	padding-bottom: 90px;
+	/* padding-bottom: 90px; */
 }
 
 .about__text {
