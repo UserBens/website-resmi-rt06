@@ -58,10 +58,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li class="active"><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a>
-                                {{-- <ul class="dropdown">
-                                    <li><a href="./Project-details.html">Produk UMKM</a></li>
-                                    <li><a href="./blog-details.html">Sewa Kos</a></li>
-                                </ul> --}}
+                            <li><a href="/prok">Proker</a></li>
                             </li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
@@ -199,7 +196,7 @@
     </section>
 
     <!-- Footer Section Begin -->
-    <footer class="footer set-bg" data-setbg="pengunjung/img/footer-bg.jpg">
+    <footer class="footer set-bg" data-setbg="{{ asset('pengunjung/img/footer-bg.jpg') }}">
         <div class="container">
 
             <div class="row">
@@ -228,6 +225,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a></li>
+                            <li><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>

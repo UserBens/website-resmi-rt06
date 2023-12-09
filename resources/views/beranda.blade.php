@@ -58,12 +58,8 @@
                         <ul>
                             <li class="active"><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
-                            <li><a href="/prod">Produk</a>
-                                <ul class="dropdown">
-                                    <li><a href="./Project-details.html">Produk UMKM</a></li>
-                                    <li><a href="./blog-details.html">Sewa Kos</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="/prod">Produk</a></li>
+                            <li><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>
@@ -194,7 +190,8 @@
                                 <div class="team__social">
                                     {{-- <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a> --}}
-                                    <a href="{{ route('detailpost', $item->id) }}"><i class="fa fa-external-link"></i></a>
+                                    <a href="{{ route('detailpost', $item->id) }}"><i
+                                            class="fa fa-external-link"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -217,11 +214,12 @@
                                 </ul>
                                 <h2>{{ $item->judul }}</h2>
                                 <img src="{{ asset('storage/' . $item->image) }}" alt="">
-                                <p style="text-align: justify;" class="mb-3">{!! (Str::limit($item->body, 800)) !!} </p>
+                                <p class="mb-3">{!! Str::limit($item->body, 800) !!} </p>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 mt-4">
                                 <div class="latest__btn">
-                                    <a href="{{ route('detailpost', $item->id) }}" class="primary-btn normal-btn">Selengkapnya</a>
+                                    <a href="{{ route('detailpost', $item->id) }}"
+                                        class="primary-btn normal-btn">Selengkapnya</a>
                                 </div>
                             </div>
                         @endforeach
@@ -299,7 +297,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-10">
                     <div class="blog__details__content">
-                        
+
                         @foreach ($kontenprod as $item)
                             <div class="blog__details__title">
                                 <ul>
@@ -307,11 +305,12 @@
                                 </ul>
                                 <h2>{{ $item->nama_produk }}</h2>
                                 <img src="{{ asset('storage/' . $item->image) }}" alt="">
-                                <p style="text-align: justify;" class="mb-3 mt-2">{!! (Str::limit($item->deskripsi_produk, 800)) !!} </p>
+                                <p class="blog__details__body mb-3 mt-2">{!! Str::limit($item->deskripsi_produk, 800) !!} </p>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 mt-4 mb-5">
                                 <div class="latest__btn">
-                                    <a href="{{ route('detailprod', $item->id) }}" class="primary-btn normal-btn">Selengkapnya</a>
+                                    <a href="{{ route('detailprod', $item->id) }}"
+                                        class="primary-btn normal-btn">Selengkapnya</a>
                                 </div>
                             </div>
                         @endforeach
@@ -352,6 +351,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a></li>
+                            <li><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>

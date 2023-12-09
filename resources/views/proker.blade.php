@@ -7,7 +7,7 @@
     <meta name="keywords" content="Staging, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Postingan | Website RT 06</title>
+    <title>Program Kerja | Website RT 06</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -56,10 +56,9 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="/">Beranda</a></li>
-                            <li class="active"><a href="/post">Postingan</a></li>
+                            <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a>
-                            <li><a href="/prok">Proker</a></li>
-                            </li>
+                            <li class="active"><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>
@@ -83,11 +82,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Postingan Lainnya</h2>
+                        <h2>Program Kerja Lainnya</h2>
                         <div class="breadcrumb__links">
                             <a href="/">Home</a>
                             {{-- <a href="/post">Posts</a> --}}
-                            <span>Postingan</span>
+                            <span>Proker</span>
                         </div>
                     </div>
                 </div>
@@ -102,37 +101,37 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog__sidebar__search mb-5">
-                        <form action="{{ route('post') }}" method="get"> <!-- Specify your search route -->
-                            <input type="text" name="search" placeholder="Cari Postingan"
+                        <form action="{{ route('prok') }}" method="get"> <!-- Specify your search route -->
+                            <input type="text" name="search" placeholder="Cari Proker"
                                 value="{{ $keyword ?? '' }}">
                             <button type="submit"><span class="icon_search"></span></button>
                         </form>
                     </div>
 
-                    @if ($postingan->count() > 0)
-                        @foreach ($postingan as $item)
+                    @if ($prok->count() > 0)
+                        @foreach ($prok as $item)
                             <div class="blog__item__list">
                                 <div class="blog__item">
                                     <ul>
                                         <li>{{ $item->created_at->diffForHumans() }}</li>
                                     </ul>
-                                    <h2>{{ $item->judul }}</h2>
-                                    <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                                    <h2>{{ $item->nama_proker }}</h2>
+                                    {{-- <img src="{{ asset('storage/' . $item->image) }}" alt=""> --}}
                                     <div class="blog__item__text">
-                                        <p class="text-justify">{!! strip_tags(Str::limit($item->body, 300)) !!} </p>
+                                        <p class="text-justify">{!! strip_tags(Str::limit($item->deskripsi_proker, 300)) !!} </p>
                                         <a href="{{ route('detailpost', $item->id) }}">Read more</a>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                         <div class="d-flex justify-content-center mt-4">
-                            {{ $postingan->appends(['search' => $keyword])->links('pagination::bootstrap-4') }}
+                            {{ $prok->appends(['search' => $keyword])->links('pagination::bootstrap-4') }}
                         </div>
                     @else
                         <h4 class="mb-4">Postingan Yang Anda Cari Tidak Dapat Ditemukan..</h4>
                         <span>
                             <button class="goback-button"
-                                onclick="window.location.href='{{ route('post') }}'">Kembali</button>
+                                onclick="window.location.href='{{ route('prok') }}'">Kembali</button>
                         </span>
                     @endif
                 </div>

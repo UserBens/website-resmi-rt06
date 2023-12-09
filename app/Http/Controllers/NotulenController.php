@@ -44,6 +44,15 @@ class NotulenController extends Controller
             'body' => 'required'
         ]);
 
+        if ($request->file('file')) {
+
+            $filePath = $request->file('file')->store('public/postingan');
+
+            $filePath = str_replace('public/', '', $filePath);
+
+            $validatedData['file'] = $filePath;
+        }
+
         Notulen::create($validatedData);
 
         return redirect('/notulen')->with('success', 'Notulen baru telah ditambahkan!');

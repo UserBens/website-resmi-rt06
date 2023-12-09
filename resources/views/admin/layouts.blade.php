@@ -128,8 +128,6 @@
                         </a>
                     </li>
 
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('notulen.index') }}">
                             <i class="mdi mdi-book-open-variant menu-icon"></i>
@@ -139,9 +137,39 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('pengurus.index') }}">
-                            <i class="mdi mdi-book-open-variant menu-icon"></i>
+                            <i class="mdi mdi-account-group menu-icon"></i>
                             <span class="menu-title">Pengurus</span>
                         </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('proker.index') }}">
+                            <i class="mdi mdi-chart-bar menu-icon"></i>
+                            <span class="menu-title">Program Kerja</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-toggle="collapse" href="#auth" aria-expanded="false"
+                            aria-controls="auth">
+                            <i class="mdi mdi-account menu-icon"></i>
+                            <span class="menu-title">Kependudukan</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="auth" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('datapenduduk') }}">
+                                    Data Penduduk</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargatetap') }}">
+                                        Warga Tetap </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargatidaktetap') }}">
+                                        Warga Tidak Tetap </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargakontrak') }}">
+                                        Warga Kontrak </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargakos') }}">
+                                        Warga Kos </a></li>
+                            </ul>
+                        </div>
                     </li>
 
                 </ul>
@@ -164,7 +192,8 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © Pengurus
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
+                            Pengurus
                             RT 06 RW 02 Desa Keputih Surabaya </a>2023</span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Tim Pengembang Website
                             KKN NR 5 UNTAG Surabaya 🚀 </span>

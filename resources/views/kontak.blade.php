@@ -58,10 +58,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a>
-                                {{-- <ul class="dropdown">
-                                    <li><a href="./Project-details.html">Produk UMKM</a></li>
-                                    <li><a href="./blog-details.html">Sewa Kos</a></li>
-                                </ul> --}}
+                            <li><a href="/prok">Proker</a></li>
                             </li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li class="active"><a href="/kontak">Kontak</a></li>
@@ -80,9 +77,9 @@
     </header>
     <!-- Header Section End -->
 
-    
+
     <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="pengunjung/img/dok3.jpeg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="{{ asset('pengunjung/img/demo2.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -107,11 +104,10 @@
                 <div class="col-lg-5">
                     <div class="contact__text">
                         <div class="section-title">
-                            <span>Information</span>
-                            <h2>Contact Details</h2>
+                            <span>Untuk Informasi Lebih Lanjut</span>
+                            <h2>Contact Us</h2>
                         </div>
-                        <p>As you might expect of a company that began as a high-end interiors contractor, we pay strict
-                            attention.</p>
+                        <p>Bisa Menghubungi Kontak Yang Tertera Dibawah Atau Langsung Menuju Ke Lokasi Yang sudah Tercantum, Dibawah</p>
                     </div>
                 </div>
             </div>
@@ -145,17 +141,19 @@
                         </div>
                         <div class="contact__widget__item__text">
                             <h5>Office Location</h5>
-                            <span>7176 Blue Spring Lane, NY, US</span>
+                            <span>RT 06 RW 02 Desa Keputih Surabaya</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="map">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087.069761554938!2d-74.2175599360452!3d40.767139456514954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c254b5958982c3%3A0xb6ab3931055a2612!2sEast%20Orange%2C%20NJ%2C%20USA!5e0!3m2!1sen!2sbd!4v1581710470843!5m2!1sen!2sbd"
-                    height="460" style="border:0;" allowfullscreen=""></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126789.78489766335!2d112.7934638!3d-7.290317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fc7bda151b3f%3A0xcbb4170d053af6c9!2sRT%2006%20RW%2002%20Desa%20Keputih%2C%20Keputih%2C%20Kec.%20Sukolilo%2C%20Kota%20SBY%2C%20Jawa%20Timur!5e0!3m2!1sen!2sid!4v1652154142752!5m2!1sen!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
             </div>
-            
+
         </div>
     </section>
     <!-- Contact Section End -->
@@ -190,6 +188,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a></li>
+                            <li><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>

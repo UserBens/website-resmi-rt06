@@ -933,6 +933,10 @@ ol {
 	padding-top: 120px;
 	/* padding-bottom: 90px; */
 }
+.team__ttgkami {
+	padding-top: 40px;
+	/* padding-bottom: 90px; */
+}
 
 .team__btn {
 	text-align: right;
@@ -2175,6 +2179,7 @@ ol {
 	line-height: 60px;
 	font-weight: 600;
 	margin-bottom: 30px;
+	text-align: left;
 }
 
 .blog__details__title img {

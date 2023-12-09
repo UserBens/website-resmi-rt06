@@ -43,6 +43,8 @@
         <select class="form-select mb-3" aria-label="Default select example" name="kategori_pengurus">
             <option value="Pengurus RT">Pengurus RT</option>
             <option value="Pengurus Kartar">Pengurus Kartar</option>
+            <option value="Pengurus PKK">Pengurus PKK</option>
+            <option value="Pengurus Masjid">Pengurus Masjid</option>
         </select>
 
 

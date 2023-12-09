@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notulen;
+use App\Models\Pengurusrt;
 use App\Models\Postingan;
 use App\Models\Produk;
+use App\Models\Proker;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,10 +19,15 @@ class DashboardController extends Controller
         $total_postingan = Postingan::all()->count();
         $total_produk = Produk::all()->count();
         $total_notulen = Notulen::all()->count();
+        $total_pengurus = Pengurusrt::all()->count();
+        $total_proker = Proker::all()->count();
+
         return view('admin.dashboard', [
             'total_postingan' => $total_postingan,
             'total_produk' => $total_produk,
             'total_notulen' => $total_notulen,
+            'total_pengurus' => $total_pengurus,
+            'total_proker' => $total_proker,
         ]);
     }
 

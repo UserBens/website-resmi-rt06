@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notulen', function (Blueprint $table) {
+        Schema::create('wargatetap', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('file');
-            $table->text('body');
-            $table->date('tgl_mulai'); 
+            $table->string('jml_penduduk');
+            $table->string('jml_laki');
+            $table->string('jml_perempuan');
+            $table->string('jml_kk');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notulen');
+        Schema::dropIfExists('wargatetap');
     }
 };

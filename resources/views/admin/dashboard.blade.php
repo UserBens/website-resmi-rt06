@@ -136,9 +136,39 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('pengurus.index') }}">
-                            <i class="mdi mdi-book-open-variant menu-icon"></i>
+                            <i class="mdi mdi-account-group menu-icon"></i>
                             <span class="menu-title">Pengurus</span>
                         </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('proker.index') }}">
+                            <i class="mdi mdi-chart-bar menu-icon"></i>
+                            <span class="menu-title">Program Kerja</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-toggle="collapse" href="#auth" aria-expanded="false"
+                            aria-controls="auth">
+                            <i class="mdi mdi-account menu-icon"></i>
+                            <span class="menu-title">Kependudukan</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="auth" style="">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('datapenduduk') }}">
+                                        Data Penduduk</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargatetap') }}">
+                                        Warga Tetap </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargatidaktetap') }}">
+                                        Warga Tidak Tetap </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargakontrak') }}">
+                                        Warga Kontrak </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ route('wargakos') }}">
+                                        Warga Kos </a></li>
+                            </ul>
+                        </div>
                     </li>
 
                 </ul>
@@ -189,14 +219,22 @@
                                                         <h5 class="me-2 mb-0 text-center">{{ $total_notulen }}</h5>
                                                     </div>
                                                 </div>
-                                                {{-- <div
+                                                <div
                                                     class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-flag me-3 icon-lg text-danger"></i>
+                                                    <i class="mdi mdi-account-group me-3 icon-lg text-dark"></i>
                                                     <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Flagged</small>
-                                                        <h5 class="me-2 mb-0">3497843</h5>
+                                                        <small class="mb-1 text-muted">Total Pengurus</small>
+                                                        <h5 class="me-2 mb-0 text-center">{{ $total_pengurus }}</h5>
                                                     </div>
-                                                </div> --}}
+                                                </div>
+                                                <div
+                                                    class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                                                    <i class="mdi mdi-chart-bar me-3 icon-lg text-primary"></i>
+                                                    <div class="d-flex flex-column justify-content-around">
+                                                        <small class="mb-1 text-muted">Total Proker</small>
+                                                        <h5 class="me-2 mb-0 text-center">{{ $total_proker }}</h5>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

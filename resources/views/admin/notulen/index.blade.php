@@ -73,9 +73,13 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>{!! $item->body !!}</p>
+                                        @if(isset($item->file) && pathinfo($item->file, PATHINFO_EXTENSION) === 'pdf')
+                                            <iframe src="{{ asset('storage/' . $item->file) }}" style="width: 100%; height: 500px;" frameborder="0"></iframe>
+                                        @else
+                                            <p>No PDF file available</p>
+                                        @endif
                                     </div>
-
+                                    
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>

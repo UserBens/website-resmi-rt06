@@ -58,10 +58,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li class="active"><a href="/prod">Produk</a>
-                                {{-- <ul class="dropdown">
-                                    <li><a href="./Project-details.html">Produk UMKM</a></li>
-                                    <li><a href="./blog-details.html">Sewa Kos</a></li>
-                                </ul> --}}
+                            <li><a href="/prok">Proker</a></li>
                             </li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
@@ -109,13 +106,12 @@
                             <ul>
                                 <li>{{ $prod->created_at->diffForHumans() }}</li>
                             </ul>
-                            <h2 class="text-justify">{{ $prod->nama_produk }}</h2>
+                            <h2 class="product-name">{{ $prod->nama_produk }}</h2>
                             <img src="{{ asset('storage/' . $prod->image) }}" alt="">
-                            <p style="text-align: justify;" class="mb-3">{!! $prod->deskripsi_produk !!} </p>
+                            <p class="product-description mb-3">{!! $prod->deskripsi_produk !!} </p>
                         </div>
-
-                        <button class="goback-button"
-                            onclick="window.location.href='{{ route('prod') }}'">Kembali ke Produk</button>
+                    
+                        <button class="goback-button" onclick="window.location.href='{{ route('prod') }}'">Kembali ke Produk</button>
                     </div>
                 </div>
             </div>
@@ -199,7 +195,7 @@
     </section>
 
     <!-- Footer Section Begin -->
-    <footer class="footer set-bg" data-setbg="pengunjung/img/footer-bg.jpg">
+    <footer class="footer set-bg" data-setbg="{{ asset('pengunjung/img/footer-bg.jpg') }}">
         <div class="container">
 
             <div class="row">
@@ -228,6 +224,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a></li>
+                            <li><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>

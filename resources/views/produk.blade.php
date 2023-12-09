@@ -7,7 +7,7 @@
     <meta name="keywords" content="Staging, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Postingan | Website RT 06</title>
+    <title>Produk | Website RT 06</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -59,10 +59,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li class="active"><a href="/prod">Produk</a>
-                                {{-- <ul class="dropdown">
-                                    <li><a href="./Project-details.html">Produk UMKM</a></li>
-                                    <li><a href="./blog-details.html">Sewa Kos</a></li>
-                                </ul> --}}
+                            <li><a href="/prok">Proker</a></li>
                             </li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
@@ -82,7 +79,7 @@
     <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="pengunjung/img/dok3.jpeg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="pengunjung/img/demo2.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -203,6 +200,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a></li>
+                            <li><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>

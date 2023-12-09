@@ -10,9 +10,15 @@ class PengurusController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pengurus = Pengurusrt::all();
+        $keyword = $request->input('search');
+
+        $pengurus = Pengurusrt::when($keyword, function ($query, $keyword) {
+            return $query->where('nama_pengurus', 'like', '%' . $keyword . '%')
+                ->orWhere('jabatan', 'like', '%' . $keyword . '%')
+                ->orWhere('kategori_pengurus', 'like', '%' . $keyword . '%');
+        })->latest()->paginate(6);
         return view('admin.pengurus.index', [
             'pengurus' => $pengurus,
         ]);
@@ -37,19 +43,19 @@ class PengurusController extends Controller
             'jabatan' => 'required',
             'kategori_pengurus' => 'required',
         ]);
-    
+
         if ($request->file('image')) {
 
             $filePath = $request->file('image')->store('public/postingan');
-    
+
             $filePath = str_replace('public/', '', $filePath);
-    
+
             $validatedData['image'] = $filePath;
         }
-    
+
         Pengurusrt::create($validatedData);
-    
-        return redirect('/pengurus')->with('success', 'Pengurus baru telah ditambahkan!');
+
+        return redirect('/pengurus')->with('success', 'Data Pengurus Baru Telah Ditambahkan!');
     }
 
     /**
@@ -65,7 +71,10 @@ class PengurusController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pengurus = Pengurusrt::where('id', $id)->first();
+        return view('admin.pengurus.edit', [
+            'pengurus' => $pengurus,
+        ]);
     }
 
     /**
@@ -73,7 +82,27 @@ class PengurusController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_pengurus' => 'required|max:255',
+            'image' => 'image|file|max:20024',
+            'jabatan' => 'required',
+            'kategori_pengurus' => 'required',
+        ]);
+
+        $pengurus = Pengurusrt::findOrFail($id);
+
+        if ($request->file('image')) {
+
+            $filePath = $request->file('image')->store('public/postingan');
+
+            $filePath = str_replace('public/', '', $filePath);
+
+            $validatedData['image'] = $filePath;
+        }
+
+        $pengurus->update($validatedData);
+
+        return redirect('/pengurus')->with('success', 'Update Data Pengurus Berhasil!');
     }
 
     /**
@@ -81,6 +110,7 @@ class PengurusController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Pengurusrt::where('id', $id)->delete();
+        return redirect('/pengurus')->with('success', 'Data Pengurus Berhasil Dihapus!');
     }
 }

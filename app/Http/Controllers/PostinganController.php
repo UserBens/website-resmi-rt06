@@ -57,7 +57,7 @@ class PostinganController extends Controller
     
         Postingan::create($validatedData);
     
-        return redirect('/pengurus')->with('success', 'Postingan baru telah ditambahkan!');
+        return redirect('/postingan')->with('success', 'Postingan baru telah ditambahkan!');
     }
     
 

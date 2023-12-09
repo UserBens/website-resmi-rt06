@@ -29,9 +29,9 @@
             <table class="table table-stripped">
                 <thead>
                     <tr>
-                        <th class="col-2">No</th>
-                        <th class="col-2">Judul</th>
-                        <th class="col-3">Dibuat Tanggal</th>
+                        <th class="col-1">No</th>
+                        <th class="col-4">Judul</th>
+                        <th class="col-2">Dibuat Tanggal</th>
                         <th class="col-3">Aksi</th>
                     </tr>
                 </thead>

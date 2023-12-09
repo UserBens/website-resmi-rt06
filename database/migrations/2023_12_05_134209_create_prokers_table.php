@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notulen', function (Blueprint $table) {
+        Schema::create('proker', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('file');
-            $table->text('body');
+            $table->string('nama_proker');
             $table->date('tgl_mulai'); 
+            $table->date('tgl_akhir'); 
+            $table->text('deskripsi_proker');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notulen');
+        Schema::dropIfExists('proker');
     }
 };

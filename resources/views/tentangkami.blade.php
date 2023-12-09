@@ -58,10 +58,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a>
-                                {{-- <ul class="dropdown">
-                                    <li><a href="./Project-details.html">Produk UMKM</a></li>
-                                    <li><a href="./blog-details.html">Sewa Kos</a></li>
-                                </ul> --}}
+                            <li><a href="/prok">Proker</a></li>
                             </li>
                             <li class="active"><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
@@ -81,7 +78,7 @@
     <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="pengunjung/img/dok3.jpeg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="{{ asset('pengunjung/img/demo2.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -113,8 +110,32 @@
                                 Desa Keputih dan Kelompok KKN NR 05 dari Universitas 17 Agustus 1945 Surabaya.
                             </p>
                         </div>
+
+                        <div class="section-title">
+                            <span>Jumlah Seluruh Penduduk</span>
+                            <h2>Warga RT 06</h2>
+                        </div>
+                        <div class="about__para__text">
+                            <p>Total Penduduk yang ada di rt 06 berjumlah {{ $datapenduduk->jml_penduduk }} jiwa dengan
+                                jumlah penduduk berjenis kelamin laki laki terdata {{ $datapenduduk->jml_laki }} dan jumlah penduduk berjenis kelamin
+                                perempuan terdata {{ $datapenduduk->jml_perempuan }} kemudian untuk total seluruh KK berjumlah {{ $datapenduduk->jml_kk }}
+                            </p>
+                        </div>
+
+                        <div class="section-title">
+                            <span>Jumlah Penduduk Tetap</span>
+                            <h2>Warga RT 06</h2>
+                        </div>
+                        <div class="about__para__text">
+                            <p>Total Penduduk Tetap yang ada di rt 06 berjumlah {{ $wargatetap->jml_penduduk }} jiwa dengan
+                                jumlah penduduk berjenis kelamin laki laki terdata {{ $wargatetap->jml_laki }} dan jumlah penduduk berjenis kelamin
+                                perempuan terdata {{ $wargatetap->jml_perempuan }} kemudian untuk total seluruh KK berjumlah {{ $wargatetap->jml_kk }}
+                            </p>
+                        </div>
+
                     </div>
                 </div>
+
                 <div class="col-lg-8 col-md-8">
                     <div class="about__page__services">
                         <div class="about__page__services__text">
@@ -144,6 +165,37 @@
                                         halaman website resmi Desa Keputih, RT 06/RW 02, Surabaya!</p>
                                 </div>
                             </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="services__item">
+                                    <img src="img/services/services-5.png" alt="">
+                                    <h4>Jumlah Penduduk Tidak Tetap </h4>
+                                    <p>Total Penduduk Tidak Tetap yang ada di rt 06 berjumlah {{ $wargatidaktetap->jml_penduduk }} jiwa dengan
+                                        jumlah penduduk berjenis kelamin laki laki terdata {{ $wargatidaktetap->jml_laki }} dan jumlah penduduk berjenis kelamin
+                                        perempuan terdata {{ $wargatidaktetap->jml_perempuan }} kemudian untuk total seluruh KK berjumlah {{ $wargatidaktetap->jml_kk }}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="services__item">
+                                    <img src="img/services/services-5.png" alt="">
+                                    <h4>Jumlah Penduduk Kontrak</h4>
+                                    <p>Total Penduduk Kontrak yang ada di rt 06 berjumlah {{ $wargakontrak->jml_penduduk }} jiwa dengan
+                                        jumlah penduduk berjenis kelamin laki laki terdata {{ $wargakontrak->jml_laki }} dan jumlah penduduk berjenis kelamin
+                                        perempuan terdata {{ $wargakontrak->jml_perempuan }} kemudian untuk total seluruh KK berjumlah {{ $wargakontrak->jml_kk }}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="services__item">
+                                    <img src="img/services/services-5.png" alt="">
+                                    <h4>Jumlah Penduduk Kos</h4>
+                                    <p>Total Penduduk Kos yang ada di rt 06 berjumlah {{ $wargakos->jml_penduduk }} jiwa dengan
+                                        jumlah penduduk berjenis kelamin laki laki terdata {{ $wargakos->jml_laki }} dan jumlah penduduk berjenis kelamin
+                                        perempuan terdata {{ $wargakos->jml_perempuan }} kemudian untuk total seluruh KK berjumlah {{ $wargakos->jml_kk }}</p>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -152,7 +204,7 @@
     </section>
 
     <!-- Blog Section Begin -->
-    <section class="team spad">
+    <section class="team__ttgkami spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-sm-6">
@@ -168,19 +220,20 @@
                 </div> --}}
             </div>
             <div class="row">
-                @foreach ($postingan as $item)
+                @foreach ($pengurusrt as $item)
                     <div class="col-lg-4 col-md-6">
                         <div class="team__item set-bg" data-setbg="{{ asset('storage/' . $item->image) }}">
                             <div class="team__text">
                                 <div class="team__title">
-                                    <h5>{{ $item->judul }}</h5>
-                                    {{-- <span>CEO & Founder</span> --}}
+                                    <h5>{{ $item->nama_pengurus }}</h5>
+                                    {{-- <h5>{{ $item->nama_jabatan }}</h5> --}}
+                                    <span>{{ $item->jabatan }}</span>
                                 </div>
-                                <p>{{ $item->created_at->diffForHumans() }}</p>
+                                <p>{{ $item->kategori_pengurus }}</p>
                                 <div class="team__social">
                                     {{-- <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a> --}}
-                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                    {{-- <a href="#"><i class="fa fa-external-link"></i></a> --}}
                                 </div>
                             </div>
                         </div>
@@ -190,50 +243,29 @@
         </div>
     </section>
 
-    {{-- <section class="callto spad set-bg" data-setbg="{{ asset('storage/' . $item->image) }}">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <div class="callto__text">
-                        <span>Why choose us?</span>
-                        <h2>Our ability to bring outstanding results to our customers.</h2>
-                        <a href="#" class="primary-btn">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-    {{-- <h2 class="justify-content-center">tim pengembang website</h2> --}}
-    <section class="team spad">
+    <section class="team__ttgkami spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-sm-6">
                     <div class="section-title">
                         <span>Susunan Pengurus</span>
-                        <h2>Karang Taruna RT 06</h2>
+                        <h2>Pengurus PKK RT 06</h2>
                     </div>
                 </div>
-                {{-- <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="team__btn">
-                        <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
-                    </div>
-                </div> --}}
+               
             </div>
-            <div class="row mb-4">
-                @foreach ($postingan as $item)
+            <div class="row mt-4 mb-4">
+                @foreach ($penguruspkk as $item)
                     <div class="col-lg-4 col-md-6">
                         <div class="team__item set-bg" data-setbg="{{ asset('storage/' . $item->image) }}">
                             <div class="team__text">
                                 <div class="team__title">
-                                    <h5>{{ $item->judul }}</h5>
-                                    {{-- <span>CEO & Founder</span> --}}
+                                    <h5>{{ $item->nama_pengurus }}</h5>
+                                    <span>{{ $item->jabatan }}</span>
                                 </div>
-                                <p>{{ $item->created_at->diffForHumans() }}</p>
+                                <p>{{ $item->kategori_pengurus }}</p>
                                 <div class="team__social">
-                                    {{-- <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a> --}}
-                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -243,6 +275,45 @@
         </div>
     </section>
     <!-- Blog Section End -->
+
+    <section class="team__ttgkami spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-6">
+                    <div class="section-title">
+                        <span>Susunan Pengurus</span>
+                        <h2>Pengurus Masjid RT 06</h2>
+                    </div>
+                </div>
+                {{-- <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team__btn">
+                        <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
+                    </div>
+                </div> --}}
+            </div>
+            <div class="row mt-4 mb-4">
+                @foreach ($pengurusmasjid as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team__item set-bg" data-setbg="{{ asset('storage/' . $item->image) }}">
+                            <div class="team__text">
+                                <div class="team__title">
+                                    <h5>{{ $item->nama_pengurus }}</h5>
+                                    {{-- <h5>{{ $item->jabatan }}</h5> --}}
+                                    <span>{{ $item->jabatan }}</span>
+                                </div>
+                                <p>{{ $item->kategori_pengurus }}</p>
+                                <div class="team__social">
+                                    {{-- <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a> --}}
+                                    <a href="#"><i class="fa fa-external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section Begin -->
     <footer class="footer set-bg" data-setbg="pengunjung/img/footer-bg.jpg">
@@ -274,6 +345,7 @@
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a></li>
+                            <li><a href="/prok">Proker</a></li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>

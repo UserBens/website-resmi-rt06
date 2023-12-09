@@ -2,9 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Postingan;
 use App\Models\Produk;
+use App\Models\Proker;
+use App\Models\Wargakos;
+use App\Models\Postingan;
+use App\Models\Pengurusrt;
+use App\Models\Wargatetap;
+use App\Models\Datapenduduk;
+use App\Models\Wargakontrak;
 use Illuminate\Http\Request;
+use App\Models\Wargatidaktetap;
 
 class BerandaController extends Controller
 {
@@ -52,21 +59,46 @@ class BerandaController extends Controller
         ]);
     }
 
-    public function tentangkami(Request $request)
+    public function proker(Request $request)
     {
         $keyword = $request->input('search');
 
-        $prod = Produk::when($keyword, function ($query, $keyword) {
+        $prok = Proker::when($keyword, function ($query, $keyword) {
             return $query->where('nama_produk', 'like', '%' . $keyword . '%')
                 ->orWhere('deskripsi_produk', 'like', '%' . $keyword . '%');
-        })->orderBy('nama_produk', 'desc')->paginate(3)->withQueryString();
+        })->latest()->paginate(3)->withQueryString();
+
+        return view('proker', [
+            'produk' => Produk::latest()->take(3)->get(),
+            'postsidebar' => Postingan::latest()->take(3)->get(),
+            'prok' => $prok,
+            'keyword' => $keyword,
+        ]);
+    }
+
+    public function tentangkami(Request $request)
+    {
+        $datapenduduk = Datapenduduk::latest()->first(); // or any other query to get the specific data
+        $wargatetap = Wargatetap::latest()->first(); // or any other query to get the specific data
+        $wargatidaktetap = Wargatidaktetap::latest()->first(); // or any other query to get the specific data
+        $wargakos = Wargakos::latest()->first(); // or any other query to get the specific data
+        $wargakontrak = Wargakontrak::latest()->first(); // or any other query to get the specific data
+
+        $pengurusrt = Pengurusrt::where('kategori_pengurus', 'Pengurus RT')->get();
+        $penguruspkk = Pengurusrt::where('kategori_pengurus', 'Pengurus PKK')->get();
+        $pengurusmasjid = Pengurusrt::where('kategori_pengurus', 'Pengurus Masjid')->get();
+        // $penguruspkk = Pengurusrt::where('kategori_pengurus', 'Pengurus Kartar')->get();
 
         return view('tentangkami', [
-            'produk' => Produk::orderBy('id', 'desc')->take(3)->get(),
-            'postsidebar' => Postingan::orderBy('id', 'asc')->take(3)->get(),
-            'postingan' => Postingan::orderBy('id', 'desc')->take(3)->get(),
-            'prod' => $prod,
-            'keyword' => $keyword,
+            'pengurusrt' => $pengurusrt,
+            'penguruspkk' => $penguruspkk,
+            'pengurusmasjid' => $pengurusmasjid,
+            'datapenduduk' => $datapenduduk,
+            'wargatetap' => $wargatetap,
+            'wargatidaktetap' => $wargatidaktetap,
+            'wargakos' => $wargakos,
+            'wargakontrak' => $wargakontrak,
+
         ]);
     }
 
