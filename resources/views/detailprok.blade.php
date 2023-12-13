@@ -7,7 +7,7 @@
     <meta name="keywords" content="Staging, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Program Kerja | Website RT 06</title>
+    <title>Detail Proker | Website RT 06</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -15,12 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="pengunjung/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="pengunjung/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="pengunjung/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="pengunjung/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="pengunjung/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="pengunjung/css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('pengunjung/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('pengunjung/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('pengunjung/css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('pengunjung/css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('pengunjung/css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('pengunjung/css/style.css') }}" type="text/css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__logo">
-            <a href="#"><img src="pengunjung/img/logo.png" alt=""></a>
+            {{-- <a href="#"><img src="pengunjung/img/logo.png" alt=""></a> --}}
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__widget">
@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        {{-- <a href="#"><img src="pengunjung/img/logo.png" alt=""></a> --}}
+                        {{-- <a href="#"><img src="pengunjung/img/launching.jpg" alt=""></a> --}}
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -59,6 +59,7 @@
                             <li><a href="/post">Postingan</a></li>
                             <li><a href="/prod">Produk</a>
                             <li class="active"><a href="/prok">Proker</a></li>
+                            </li>
                             <li><a href="/ttg-kami">Tentang Kami</a></li>
                             <li><a href="/kontak">Kontak</a></li>
                         </ul>
@@ -77,16 +78,16 @@
     <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="pengunjung/img/demo2.jpg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="{{ asset('pengunjung/img/demo2.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Program Kerja Lainnya</h2>
+                        <h2>Detail Proker</h2>
                         <div class="breadcrumb__links">
                             <a href="/">Home</a>
-                            {{-- <a href="/post">Posts</a> --}}
-                            <span>Proker</span>
+                            <a href="/prok"><span>Proker</span></a>
+                            <span>Detail Proker</span>
                         </div>
                     </div>
                 </div>
@@ -95,81 +96,106 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-    <!-- Blog Section Begin -->
-    <section class="blog spad">
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details spad">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="blog__sidebar__search mb-5">
-                        <form action="{{ route('prok') }}" method="get"> <!-- Specify your search route -->
-                            <input type="text" name="search" placeholder="Cari Proker"
-                                value="{{ $keyword ?? '' }}">
-                            <button type="submit"><span class="icon_search"></span></button>
-                        </form>
-                    </div>
-
-                    @if ($prok->count() > 0)
-                        @foreach ($prok as $item)
-                            <div class="blog__item__list">
-                                <div class="blog__item">
-                                    <ul>
-                                        <li>{{ $item->created_at->diffForHumans() }}</li>
-                                    </ul>
-                                    <h2>{{ $item->nama_proker }}</h2>
-                                    {{-- <img src="{{ asset('storage/' . $item->image) }}" alt=""> --}}
-                                    <div class="blog__item__text">
-                                        <p class="text-justify">{!! strip_tags(Str::limit($item->deskripsi_proker, 300)) !!} </p>
-                                        <a href="{{ route('detailprok', $item->id) }}">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                        <div class="d-flex justify-content-center mt-4">
-                            {{ $prok->appends(['search' => $keyword])->links('pagination::bootstrap-4') }}
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-10">
+                    <div class="blog__details__content">
+                        <div class="blog__details__title">
+                            <ul>
+                                <li>{{ $prok->created_at->diffForHumans() }}</li>
+                            </ul>
+                            <h2 class="product-name">{{ $prok->nama_proker }}</h2>
+                            {{-- <img src="{{ asset('storage/' . $prod->image) }}" alt=""> --}}
+                            <p class="product-description mb-3">{!! $prok->deskripsi_proker !!} </p>
                         </div>
-                    @else
-                        <h4 class="mb-4">Postingan Yang Anda Cari Tidak Dapat Ditemukan..</h4>
-                        <span>
-                            <button class="goback-button"
-                                onclick="window.location.href='{{ route('prok') }}'">Kembali</button>
-                        </span>
-                    @endif
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="blog__sidebar">
-                        <div class="blog__sidebar__feature">
-                            <h5>Produk Terbaru</h5>
-                            @foreach ($produk as $item)
-                                <a href="{{ route('detailprod', $item->id) }}" class="blog__sidebar__feature__item">
-                                    {{-- <div class="blog__sidebar__feature__item__pic">
-                                    </div> --}}
-                                    <img src="{{ asset('storage/' . $item->image) }}" alt="">
-                                    <div class="blog__sidebar__feature__item__text">
-                                        <h6 class="mt-2">{{ $item->nama_produk }}</h6>
-                                        <span class="mt-1">{{ $item->created_at->diffForHumans() }}</span>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-
-                        <div class="blog__sidebar__social">
-                            <h5>Follow Us</h5>
-                            {{-- <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a> --}}
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            {{-- <a href="#"><i class="fa fa-linkedin"></i></a> --}}
-                        </div>
+                    
+                        <button class="goback-button" onclick="window.location.href='{{ route('prok') }}'">Kembali ke Proker</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
+    <!-- Blog Details Section End -->
+
+    
+    <section class="detail_post_post">
+        {{-- <div class="separator"></div> <!-- Garis pemisah --> --}}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-6">
+                    <div class="section-title">
+                        <span>Kegiatan Lainnya</span>
+                        <h2>Postingan</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team__btn">
+                        <a href="/post" class="primary-btn normal-btn">Lihat Semua</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($postingan as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team__item set-bg" data-setbg="{{ asset('storage/' . $item->image) }}">
+                            <div class="team__text">
+                                <div class="team__title">
+                                    <h5>{{ $item->judul }}</h5>
+                                    {{-- <span>CEO & Founder</span> --}}
+                                </div>
+                                <p>{{ $item->created_at->diffForHumans() }}</p>
+                                <div class="team__social">
+                                    {{-- <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a> --}}
+                                    <a href="{{ route('detailpost', $item->id) }}"><i
+                                            class="fa fa-external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <section class="detail_post_produk">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-6">
+                    <div class="section-title">
+                        <span>Produk Terbaru</span>
+                        <h2>Produk UMKM</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="latest__btn">
+                        <a href="#" class="primary-btn normal-btn">Lihat Semua</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($produk as $item)
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="latest__item">
+                            <div class="latest__item__pic">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                            </div>
+                            <div class="latest__item__text">
+                                <span>{{ $item->created_at->diffForHumans() }}</span>
+                                <h4>{{ $item->nama_produk }}</h4>
+                                <a href="{{ route('detailprod', $item->id) }}">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section Begin -->
-    <footer class="footer set-bg" data-setbg="pengunjung/img/footer-bg.jpg">
+    <footer class="footer set-bg" data-setbg="{{ asset('pengunjung/img/footer-bg.jpg') }}">
         <div class="container">
 
             <div class="row">
@@ -251,12 +277,12 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="pengunjung/js/jquery-3.3.1.min.js"></script>
-    <script src="pengunjung/js/bootstrap.min.js"></script>
-    <script src="pengunjung/js/jquery.slicknav.js"></script>
-    <script src="pengunjung/js/owl.carousel.min.js"></script>
-    <script src="pengunjung/js/slick.min.js"></script>
-    <script src="pengunjung/js/main.js"></script>
+    <script src="{{ asset('pengunjung/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('pengunjung/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('pengunjung/js/jquery.slicknav.js') }}"></script>
+    <script src="{{ asset('pengunjung/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('pengunjung/js/slick.min.js') }}"></script>
+    <script src="{{ asset('pengunjung/js/main.js') }}"></script>
 </body>
 
 </html>

@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostinganController;
 use App\Http\Controllers\WargatetapController;
 use App\Http\Controllers\DatapendudukController;
+use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\WargakontrakController;
 use App\Http\Controllers\WargakosController;
 use App\Http\Controllers\WargatidaktetapController;
@@ -34,6 +35,7 @@ Route::get('/ttg-kami', [BerandaController::class, 'tentangkami'])->name('ttgkam
 Route::get('/kontak', [BerandaController::class, 'kontak'])->name('kontak');
 Route::get('/detail-post/{id}', [BerandaController::class, 'detailpost'])->name('detailpost');
 Route::get('/detail-prod/{id}', [BerandaController::class, 'detailprod'])->name('detailprod');
+Route::get('/detail-prok/{id}', [BerandaController::class, 'detailprok'])->name('detailprok');
 
 Route::resource('/dashboard', DashboardController::class)->middleware(['auth', 'verified']);
 Route::resource('/postingan', PostinganController::class)->middleware(['auth', 'verified']);
@@ -52,6 +54,7 @@ Route::get('/warga-kontrak', [WargakontrakController::class, 'index'])->middlewa
 Route::post('/warga-kontrak', [WargakontrakController::class, 'updatewargakontrak'])->middleware(['auth', 'verified'])->name('wargakontrak.update');
 Route::get('/warga-kos', [WargakosController::class, 'index'])->middleware(['auth', 'verified'])->name('wargakos');
 Route::post('/warga-kos', [WargakosController::class, 'updatewargakos'])->middleware(['auth', 'verified'])->name('wargakos.update');
+Route::get('/visitor', [VisitorController::class, 'statistics'])->middleware(['auth', 'verified'])->name('visitor');
 
 // Route::get('/notulen/search', [NotulenController::class, 'search'])->name('notulen.search');
 

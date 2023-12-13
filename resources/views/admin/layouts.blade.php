@@ -172,6 +172,13 @@
                         </div>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('visitor') }}">
+                            <i class="mdi mdi-chart-line menu-icon"></i>
+                            <span class="menu-title">Pengunjung</span>
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
             <!-- partial -->

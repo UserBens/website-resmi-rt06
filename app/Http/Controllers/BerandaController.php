@@ -64,8 +64,7 @@ class BerandaController extends Controller
         $keyword = $request->input('search');
 
         $prok = Proker::when($keyword, function ($query, $keyword) {
-            return $query->where('nama_produk', 'like', '%' . $keyword . '%')
-                ->orWhere('deskripsi_produk', 'like', '%' . $keyword . '%');
+            return $query->where('nama_proker', 'like', '%' . $keyword . '%');
         })->latest()->paginate(3)->withQueryString();
 
         return view('proker', [
@@ -119,6 +118,16 @@ class BerandaController extends Controller
             'postingan' => Postingan::orderBy('id', 'asc')->take(3)->get(),
             'produk' => Produk::orderBy('id', 'asc')->take(3)->get(),
             'prod' => $prod,
+        ]);
+    }
+
+    public function detailprok($id)
+    {
+        $prok = Proker::find($id);
+        return view('detailprok', [
+            'postingan' => Postingan::orderBy('id', 'asc')->take(3)->get(),
+            'produk' => Produk::orderBy('id', 'asc')->take(3)->get(),
+            'prok' => $prok,
         ]);
     }
 
