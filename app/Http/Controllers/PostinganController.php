@@ -48,7 +48,7 @@ class PostinganController extends Controller
     
         if ($request->file('image')) {
 
-            $filePath = $request->file('image')->store('public/postingan');
+            $filePath = $request->file('image')->store('public/storagpostingan');
     
             $filePath = str_replace('public/', '', $filePath);
     

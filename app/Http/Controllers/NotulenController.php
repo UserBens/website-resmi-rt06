@@ -88,6 +88,15 @@ class NotulenController extends Controller
             'body' => 'required'
         ]);
 
+        if ($request->file('file')) {
+
+            $filePath = $request->file('file')->store('public/postingan');
+
+            $filePath = str_replace('public/', '', $filePath);
+
+            $validatedData['file'] = $filePath;
+        }
+        
         $notulen = Notulen::findOrFail($id);
 
         $notulen->update($validatedData);

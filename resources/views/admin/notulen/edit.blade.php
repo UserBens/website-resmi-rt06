@@ -24,6 +24,12 @@
         </div> --}}
 
         <div class="mb-3">
+            <label for="file" class="form-label">Upload File</label>
+            <input class="form-control @error('file') is-invalid @enderror" type="file" id="file"
+                name="file">
+        </div>
+        
+        <div class="mb-3">
             <div class="row">
                 <div class="col-auto">Tanggal Notulensi</div>
                 <div class="col-auto"><input type="date" class="form-control form-control-sm" name="tgl_mulai"
